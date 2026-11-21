@@ -1,4 +1,5 @@
 import { ArrowIcon } from '../icons'
+import { Link } from "react-router";
 import HeroVisual from './HeroVisual'
 
 export default function Hero() {
@@ -13,9 +14,10 @@ export default function Hero() {
             визуализация, объяснение, код и сложность — в одном месте.
           </p>
           <div className="hero-actions">
-            <a className="primary-button" href="#catalog">
+            {/* <a className="primary-button" href="#catalog">
               Начать изучение <ArrowIcon />
-            </a>
+            </a> */}
+            <Link className="primary-button" to="/dashboard">Начать изучение <ArrowIcon /> </Link>
             <a className="text-link" href="#how-it-works">
               Как это работает <span>↓</span>
             </a>

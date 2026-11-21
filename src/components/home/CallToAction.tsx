@@ -1,4 +1,5 @@
 import { ArrowIcon } from '../icons'
+import { Link } from "react-router";
 
 export default function CallToAction() {
   return (
@@ -8,9 +9,10 @@ export default function CallToAction() {
           <div className="section-kicker">Готовы попробовать?</div>
           <h2>Откройте алгоритмы<br />с новой стороны.</h2>
           <p>Выберите тему, запустите визуализацию и разберите каждый шаг в своём темпе.</p>
-          <a className="primary-button" href="#catalog">
+          {/* <a className="primary-button" href="#catalog">
             Перейти к каталогу <ArrowIcon />
-          </a>
+          </a> */}
+          <Link className="primary-button" to="/dashboard">Начать изучение <ArrowIcon /> </Link>
         </div>
       </div>
     </section>
