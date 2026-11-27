@@ -1,22 +1,36 @@
-const values = [42, 17, 8, 63, 25, 9, 51, 33]
+import type { SortStep } from '../../algorithms/sorting/types'
 
-export default function SortingVisualizer() {
+interface SortingVisualizerProps {
+  step: SortStep | undefined
+}
+
+export default function SortingVisualizer({ step }: SortingVisualizerProps) {
+  if (!step) {
+    return null
+  }
+
   return (
     <div className="sorting-visualizer" aria-label="Визуализация сортировки">
       <div className="sorting-visualizer__list">
-        {values.map((value, index) => {
-          const stateClass =
-            index === 2
-              ? ' sorting-visualizer__item--comparing'
-              : index === 5
-                ? ' sorting-visualizer__item--sorted'
-                : index === 0
-                  ? ' sorting-visualizer__item--active'
-                  : ''
+        {step.array.map((value, index) => {
+          const classes = ['sorting-visualizer__item']
+
+          if (step.sorted.includes(index)) {
+            classes.push('sorting-visualizer__item--sorted')
+          }
+          if (step.active === index) {
+            classes.push('sorting-visualizer__item--active')
+          }
+          if (step.swapped?.includes(index)) {
+            classes.push('sorting-visualizer__item--swapped')
+          }
+          if (step.comparing.includes(index)) {
+            classes.push('sorting-visualizer__item--comparing')
+          }
 
           return (
             <div
-              className={`sorting-visualizer__item${stateClass}`}
+              className={classes.join(' ')}
               key={index}
               style={{ height: `${value * 2 + 24}px` }}
             >

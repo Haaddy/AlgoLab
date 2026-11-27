@@ -27,12 +27,6 @@
   color: var(--text-muted);
 }
 
-.sorting-visualizer__item--comparing {
-  border-color: var(--accent);
-  background: rgba(var(--glow-rgb), .1);
-  color: var(--text);
-}
-
 .sorting-visualizer__item--sorted {
   border-color: var(--border-hover);
   background: var(--surface);
@@ -41,6 +35,18 @@
 
 .sorting-visualizer__item--active {
   border-color: var(--accent-hover);
+}
+
+.sorting-visualizer__item--swapped {
+  border-color: var(--accent);
+  background: rgba(var(--glow-rgb), .06);
+  color: var(--text);
+}
+
+.sorting-visualizer__item--comparing {
+  border-color: var(--accent);
+  background: rgba(var(--glow-rgb), .1);
+  color: var(--text);
 }
 
 .sorting-visualizer__value {

@@ -1,3 +1,6 @@
+import { bubbleSort } from './sorting/bubbleSort'
+import type { SortStep } from './sorting/types'
+
 export interface AlgorithmCategory {
   id: string
   label: string
@@ -16,6 +19,7 @@ export interface Algorithm {
   glyph: string
   visualizer: VisualizerType
   code: string
+  generateSteps?: (input: number[]) => SortStep[]
 }
 
 export const categories: AlgorithmCategory[] = [
@@ -52,6 +56,7 @@ export const algorithms: Algorithm[] = [
     glyph: '↕',
     visualizer: 'sorting',
     code: bubbleSortCode,
+    generateSteps: bubbleSort,
   },
   {
     id: 'quick-sort',
