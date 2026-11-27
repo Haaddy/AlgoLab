@@ -1,0 +1,226 @@
+.algorithm-page {
+  min-height: 100vh;
+  padding: 40px 0 120px;
+  background: var(--bg);
+}
+
+.algorithm-page__header {
+  margin-bottom: 32px;
+}
+
+.algorithm-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.algorithm-page__back:hover {
+  color: var(--accent-hover);
+}
+
+.algorithm-page__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.algorithm-page__tag {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.algorithm-page__title {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: var(--text);
+  font-size: clamp(32px, 4.4vw, 52px);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -.02em;
+}
+
+.algorithm-page__description {
+  max-width: 640px;
+  margin: 16px 0 0;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.algorithm-page__controls {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.algorithm-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.algorithm-controls__transport {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.algorithm-controls__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color .16s var(--ease-out), background-color .16s var(--ease-out);
+}
+
+.algorithm-controls__button:hover {
+  color: var(--text);
+}
+
+.algorithm-controls__button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.algorithm-controls__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.algorithm-controls__button--primary {
+  width: 52px;
+  height: 52px;
+  color: #24121d;
+  background: var(--accent);
+}
+
+.algorithm-controls__button--primary:hover {
+  background: var(--accent-hover);
+}
+
+.algorithm-controls__button--primary svg {
+  width: 22px;
+  height: 22px;
+}
+
+.algorithm-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.algorithm-workspace__visual,
+.algorithm-workspace__code {
+  min-width: 0;
+}
+
+.algorithm-workspace__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.algorithm-workspace__heading {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.algorithm-workspace__complexity {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #24121d;
+  background: var(--accent);
+  font: 600 14px/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.algorithm-code {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-raised);
+}
+
+.algorithm-code__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.algorithm-code__title {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.algorithm-code__language {
+  color: var(--text-subtle);
+  font: 500 11px var(--font-mono);
+  letter-spacing: .08em;
+}
+
+.algorithm-code__pre {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  color: var(--text-muted);
+  font: 400 13px/1.7 var(--font-mono);
+  tab-size: 2;
+}
+
+.algorithm-code__code {
+  font: inherit;
+}
+
+.algorithm-page--missing .container {
+  padding: 64px 0;
+}
+
+@media (max-width: 900px) {
+  .algorithm-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 570px) {
+  .algorithm-page {
+    padding: 32px 0 96px;
+  }
+
+  .algorithm-page__controls {
+    padding: 8px 0;
+  }
+
+  .algorithm-controls__button {
+    flex: 0 0 auto;
+  }
+
+  .algorithm-code__pre {
+    font-size: 12px;
+  }
+}

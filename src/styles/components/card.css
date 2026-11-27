@@ -40,7 +40,7 @@
 }
 
 .card__complexity {
-  color: var(--text-subtle);
+  color: var(--accent-bright);
   font: 400 12px var(--font-mono);
   font-variant-numeric: tabular-nums;
 }

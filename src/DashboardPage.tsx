@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './styles/reset.css'
 import './styles/variables.css'
 import './styles/fonts.css'
@@ -8,8 +9,6 @@ import './styles/components/category-tabs.css'
 import './styles/DashboardPage.css'
 import { AlgorithmList, CategoryTabs, algorithms, categories, initialCategory } from './components/dashboard'
 
-const activeAlgorithms = algorithms.filter((algorithm) => algorithm.category === initialCategory)
-
 const counts: Record<string, number> = Object.fromEntries(
   categories.map((category) => [
     category.id,
@@ -18,6 +17,10 @@ const counts: Record<string, number> = Object.fromEntries(
 )
 
 export default function DashboardPage() {
+  const [activeCategory, setActiveCategory] = useState(initialCategory)
+
+  const activeAlgorithms = algorithms.filter((algorithm) => algorithm.category === activeCategory)
+
   return (
     <div className="dashboard">
       <header className="dashboard__header container">
@@ -28,7 +31,12 @@ export default function DashboardPage() {
       </header>
 
       <div className="dashboard__controls container">
-        <CategoryTabs categories={categories} counts={counts} activeCategory={initialCategory} />
+        <CategoryTabs
+          categories={categories}
+          counts={counts}
+          activeCategory={activeCategory}
+          onSelect={setActiveCategory}
+        />
       </div>
 
       <section className="dashboard__results container" aria-label="Алгоритмы выбранной категории">

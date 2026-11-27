@@ -1,0 +1,43 @@
+.hljs {
+  color: var(--text-muted);
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-selector-tag {
+  color: var(--accent);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition {
+  color: var(--text);
+}
+
+.hljs-number,
+.hljs-built_in,
+.hljs-type,
+.hljs-operator,
+.hljs-punctuation {
+  color: var(--text-muted);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--text-subtle);
+  font-style: normal;
+}
+
+.hljs-title,
+.hljs-title\.function_,
+.hljs-section,
+.hljs-name,
+.hljs-property {
+  color: var(--text);
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-attr {
+  color: var(--text-muted);
+}
